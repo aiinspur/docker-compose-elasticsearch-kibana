@@ -7,7 +7,7 @@ services:
       - node.name=elasticsearch1
       - cluster.name=docker-cluster
       - cluster.initial_master_nodes=elasticsearch1
-      - bootstrap.memory_lock=true
+      #- bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms256M -Xmx256M"
       - http.cors.enabled=true
       - http.cors.allow-origin=*
@@ -56,7 +56,7 @@ services:
       - node.name=elasticsearch2
       - cluster.name=docker-cluster
       - cluster.initial_master_nodes=elasticsearch1
-      - bootstrap.memory_lock=true
+      #- bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms256M -Xmx256M"
       - "discovery.zen.ping.unicast.hosts=elasticsearch1"
       - http.cors.enabled=true
@@ -105,7 +105,7 @@ services:
       - node.name=elasticsearch3
       - cluster.name=docker-cluster
       - cluster.initial_master_nodes=elasticsearch1
-      - bootstrap.memory_lock=true
+    #  - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms256M -Xmx256M"
       - "discovery.zen.ping.unicast.hosts=elasticsearch1"
       - http.cors.enabled=true
@@ -177,7 +177,7 @@ services:
       #    memory: 256M
       #  reservations:
       #    cpus: '1'
-      #    memory: 256M
+          memory: 256M
       restart_policy:
         condition: on-failure
         delay: 30s
