@@ -159,11 +159,11 @@ services:
       - type: volume
         source: logs
         target: /var/log
-    ulimits:
-      nproc: 65535
-      memlock:
-        soft: -1
-        hard: -1
+    #ulimits:
+    #  nproc: 65535
+    #  memlock:
+    #    soft: -1
+    #    hard: -1
     cap_add:
       - ALL
     deploy:
@@ -171,13 +171,13 @@ services:
       update_config:
         parallelism: 1
         delay: 10s
-      resources:
-        limits:
-          cpus: '1'
-          memory: 256M
-        reservations:
-          cpus: '1'
-          memory: 256M
+      #resources:
+      #  limits:
+      #    cpus: '1'
+      #    memory: 256M
+      #  reservations:
+      #    cpus: '1'
+      #    memory: 256M
       restart_policy:
         condition: on-failure
         delay: 30s
